@@ -1,0 +1,277 @@
+/* styles.css */
+
+/* Navigation Bar styles */
+.navbar {
+    background-color: #1E2A5E;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a.active {
+    background-color: #fff;
+    color: #1E2A5E;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #1E2A5E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a2235;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#loading-screen, #welcome-screen, #doctor-listing, #my-appointments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.hospital-name {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.progress-bar {
+    width: 80%;
+    background-color: #ddd;
+    margin-top: 20px;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #1E2A5E;
+    transition: width 3s; /* Updated to match 3 seconds loading */
+}
+
+#welcome-screen h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+#doctor-listing, #my-appointments {
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctor-listing-header, .appointments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+#doctor-listing h1, #my-appointments h1 {
+    margin: 0;
+}
+
+#book-appointment-btn, #filter-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1E2A5E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#book-appointment-btn:hover, #filter-btn:hover {
+    background-color: #1a2235;
+}
+
+hr {
+    width: 80%;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+/* Status badge styles */
+.status-available {
+    color: #027A48;
+    background-color: #ECFDF3;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+.status-not-available {
+    color: #B42318;
+    background-color: #FEF3F2;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+
+    table tr { 
+        margin-bottom: 15px; 
+    }
+
+    table td { 
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    table td:before { 
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    table td:nth-of-type(1):before { content: "Patient Name"; }
+    table td:nth-of-type(2):before { content: "Doctor Name"; }
+    table td:nth-of-type(3):before { content: "Pre-disease"; }
+    table td:nth-of-type(4):before { content: "Still Suffering"; }
+    table td:nth-of-type(5):before { content: "OPD Date"; }
+    table td:nth-of-type(6):before { content: "File"; }
+    table td:nth-of-type(7):before { content: "Age"; }
+    table td:nth-of-type(8):before { content: "Gender"; }
+    table td:nth-of-type(9):before { content: "Blood Group"; }
+    table td:nth-of-type(10):before { content: "Address"; }
+    table td:nth-of-type(11):before { content: "City"; }
+    table td:nth-of-type(12):before { content: "State"; }
+    table td:nth-of-type(13):before { content: "Expected Appointment Date"; }
+    table td:nth-of-type(14):before { content: "Expected Appointment Time"; }
+}
